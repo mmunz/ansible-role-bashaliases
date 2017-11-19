@@ -1,0 +1,17 @@
+---
+# tasks file for ansible-bashalias
+
+- name: create alias file
+  become: yes
+  template:
+    src: "bash_aliases_ansible.j2"
+    dest: "/etc/bash_aliases_ansible"
+    owner: root
+    group: root
+    mode: 0644
+  tags: [bashaliases]
+
+- name: add include for alias file
+  become: yes
+  lineinfile: dest=/etc/bash.bashrc line='[ -f /etc/bash_aliases_ansible ] && source /etc/bash_aliases_ansible' state=present
+  tags: [bashaliases]

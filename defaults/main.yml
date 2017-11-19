@@ -1,0 +1,15 @@
+---
+# defaults file for ansible-bashalias
+
+bashalias_aliases:
+  - ll='ls -hl'
+  - la='ls -hal'
+  - hg='history | grep'
+  - aptupd='sudo apt-get update'
+  - aptupgr='sudo apt-get upgrade'
+  - sc='sudo systemctl'
+  - scre='sudo systemctl restart'
+  - scstart='sudo systemctl start'
+  - scstop='sudo systemctl stop'
+  - logread='tail -n 200 -f /var/log/syslog'
+  
